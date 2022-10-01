@@ -3,9 +3,23 @@
 <div class="row">
   <div class="col">
     <!-- Recibimos el output y lo pasamos a la funcion -->
-    <app-pais-input (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)" placeholder="Buscar por pais..."></app-pais-input>
+    <app-pais-input
+      (onEnter)="buscar($event)"
+      (onDebounce)="sugerencias($event)"
+      placeholder="Buscar por pais..."
+    ></app-pais-input>
   </div>
 </div>
+
+<ul class="list-group">
+  <li
+    class="list-group-item list-group-item-action"
+    *ngFor="let pais of paisesSugeridos"
+    [routerLink]="['/pais', pais.alpha2Code]"
+  >
+    {{ pais.name }}
+  </li>
+</ul>
 <hr />
 
 <div class="alert alert-danger" *ngIf="hayError">
