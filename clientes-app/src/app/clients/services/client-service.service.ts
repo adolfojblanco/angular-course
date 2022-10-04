@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Client } from '../interfaces/client.interface';
+import { catchError, Observable, throwError } from 'rxjs';
+import { Client } from '../../interfaces/client.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -15,5 +15,17 @@ export class ClientServiceService {
   getClientes(): Observable<Client[]> {
     const url = `${this.apiUrl}/clients`;
     return this.http.get<Client[]>(url);
+  }
+
+  create(client: Client): Observable<Client> {
+    return this.http
+      .post<Client>(`${this.apiUrl}/clients`, client, {
+        headers: this.htppHeaders,
+      })
+      .pipe(
+        catchError((e) => {
+          return throwError(() => e);
+        })
+      );
   }
 }

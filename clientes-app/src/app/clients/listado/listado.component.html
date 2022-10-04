@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="row flex">
+    <div class="col-12 flex-column">
+      <h5 class="card-header">Listado de clientes</h5>
+      <a routerLink="/clients/agregar" class="btn btn-danger">Nuevo</a>
+    </div>
+    <div class="col-4">
+    </div>
+    
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Email</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients">
+          <th scope="row">1</th>
+          <td>{{ client.name }}</td>
+          <td>{{ client.surname }}</td>
+          <td>{{ client.email }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientServiceService } from '../services/client-service.service';
+import { ClientServiceService } from './services/client-service.service';
 import { Client } from '../interfaces/client.interface';
 
 @Component({
@@ -8,15 +8,11 @@ import { Client } from '../interfaces/client.interface';
   styles: [],
 })
 export class ClientsComponent implements OnInit {
-  clients: Client[] = [];
 
-  constructor(private clientService: ClientServiceService) {}
+
+  constructor() {}
 
   ngOnInit(): void {
-    this.clientService.getClientes().subscribe({
-      next: (clients) => {
-        this.clients = clients;
-      },
-    });
+
   }
 }

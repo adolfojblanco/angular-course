@@ -5,17 +5,8 @@ import { CompanyComponent } from './company/company.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/clients',
-    pathMatch: 'full',
-  },
-  {
     path: 'clients',
-    component: ClientsComponent,
-  },
-  {
-    path: 'companies',
-    component: CompanyComponent,
+    loadChildren: () => import('./clients/clients.module').then((m) => m.ClientsModule)
   },
 ];
 
