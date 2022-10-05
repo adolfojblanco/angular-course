@@ -1,1 +1,27 @@
-<p>sidemenu works!</p>
+<h2>Templates</h2>
+<hr />
+
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let item of templateMenu"
+    routerLinkActive="active"
+    [routerLink]="[item.ruta]"
+  >
+    {{ item.texto }}
+  </li>
+</ul>
+<hr>
+<h2>Reactive</h2>
+<hr />
+
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let item of reactiveMenu"
+    routerLinkActive="active"
+    [routerLink]="[item.ruta]"
+  >
+    {{ item.texto }}
+  </li>
+</ul>
