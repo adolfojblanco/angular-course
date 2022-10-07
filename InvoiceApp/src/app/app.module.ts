@@ -1,13 +1,14 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClientsModule } from './clients/clients.module';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, ClientsModule, HttpClientModule],
+  declarations: [AppComponent, NavBarComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

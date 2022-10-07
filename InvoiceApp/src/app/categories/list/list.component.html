@@ -1,0 +1,24 @@
+<div class="card">
+  <h5 class="card-header">Categorias</h5>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories">
+          <th scope="row">{{ category.id }}</th>
+          <td>{{ category.name }}</td>
+          <td>
+            
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
